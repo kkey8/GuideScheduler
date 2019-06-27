@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.mycompany.climbworksscheduler.service.AdminServiceTest
+-------------------------------------------------------------------------------
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.381 s - in com.mycompany.climbworksscheduler.service.AdminServiceTest

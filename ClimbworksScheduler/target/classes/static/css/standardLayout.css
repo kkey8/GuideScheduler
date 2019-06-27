@@ -1,0 +1,53 @@
+body {
+    background-image: url(../images/backgroundImage.jpg);
+    background-size: contain;
+    background-attachment: fixed;
+    background-repeat: repeat-y;
+    background-position: center top;
+    background-color: rgba(64, 133, 32, 0.425);
+}
+
+button, a {
+    margin: 15px 0;
+    padding-bottom: 10px;
+}
+
+a {
+    margin-top: 0;
+}
+
+.container {
+    opacity: .95;
+    margin-top: 10px;
+    background-color: rgb(233, 231, 231);
+}
+
+img {
+    border-radius: 50%;
+    width: 80px;
+    height: auto;
+}
+
+#tableContainer {
+    text-align: center;
+}
+
+#tableContainer table {
+    margin: 10%;
+}
+
+.form {
+    margin: 15px 0;
+}
+
+div.displayGuideName {
+    margin-bottom: 15px;
+}
+
+#guideName {
+    font-size: 1.5em;
+}
+
+input#mydate {
+    margin-top: 10px;
+}

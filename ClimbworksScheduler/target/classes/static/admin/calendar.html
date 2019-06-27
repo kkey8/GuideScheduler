@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calendar</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/standardLayout.css">
+    <link href="../css/glDatePicker.default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="adminHome.html"><img src="../images/logo.png" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="calendar.html">Calendar</a>
+                    <a class="nav-item nav-link" href="employees.html">Employees</a>
+                    <a class="nav-item nav-link" href="offRequests.html">Off Requests</a>
+                    <a class="nav-item nav-link" href="weekView.html">Week View</a>
+                    <a class="nav-item nav-link" href="generateSchedule.html">Generate Schedule</a>
+                    <a class="nav-item nav-link" href="/logout">Sign Out</a>
+                </div>
+            </div>
+        </nav>
+        <ul class="list-group" id="errorMessages"></ul>
+        <input class="mt-2 mb-2" placeholder="date" id="mydate" gldp-id="mydate" type="text" value="" readonly>
+        <br>
+
+        <button class="btn btn-primary mb-2" id="findButton">Find</button>
+        <br>
+        <table id="employeeTable" class="table table-hover">
+            <tr>
+                <th width="10%">Time</th>
+                <th width="10%">Receiver</th>
+                <th width="10%">Sender</th>
+            </tr>
+            <!--
+                                 #3: This holds the list of contacts - we will add rows
+                                dynamically
+                                 using jQuery
+                                 -->
+            <tbody id="contentRows"></tbody>
+        </table>
+        <div id="tableContainer">
+            <table id="receiversTable" class="table table-hover" style="display: inline;">
+                <thead>
+                    <tr>
+                        <th>Available Receivers</th>
+                    </tr>
+                </thead>
+                <tbody id="receivers"></tbody>
+            </table>
+            <table id="sendersTable" class="table table-hover" style="display: inline;">
+                <thead>
+                    <tr>
+                        <th>Available Senders</th>
+                    </tr>
+                </thead>
+                <tbody id="senders"></tbody>
+            </table>
+            <table id="offTable" class="table table-hover" style="display: inline;">
+                <thead>
+                    <tr>
+                        <th>Off</th>
+                    </tr>
+                </thead>
+                <tbody id="off"></tbody>
+            </table>
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="../js/adminCalendar.js"></script>
+    <script src="../glDatePicker.min.js"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('#mydate').glDatePicker();
+        });
+    </script>
+</body>
+
+</html>
