@@ -21,13 +21,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     private CustomUserDetailsService uds;
     
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        
-//        auth.userDetailsService(uds)
-//                .passwordEncoder(getPasswordEncoder());
-//    }
-    
     @Override
     protected void configure(HttpSecurity http) throws Exception {
             http.csrf().disable();
@@ -39,20 +32,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                     .formLogin().failureUrl("/login?login_error=1").permitAll()
                     .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/index.html");
     }
-
-//    private PasswordEncoder getPasswordEncoder() {
-//        return new PasswordEncoder() {
-//            @Override
-//            public String encode(CharSequence charSequence) {
-//                return charSequence.toString();
-//            }
-//            
-//            @Override
-//            public boolean matches(CharSequence charSequence, String s) {
-//                return true;
-//            }
-//        };
-//    }
 
     @Autowired
     public void configureGlobalInDB(AuthenticationManagerBuilder auth) throws Exception {
